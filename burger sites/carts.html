@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart - Kota Kinabalu Burger</title>
+<link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <img src="logo.png" alt="logo">
+    <span id="brand">Kota Kinabalu Burger</span>
+  </div>
+  <div class="nav-right">
+    <a href="home.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="cart.html" class="active">Cart</a>
+    <a href="login.html">Login</a>
+  </div>
+</nav>
+
+<header class="menu-header">
+  <h1>Your Cart</h1>
+  <p>Review items before checkout</p>
+</header>
+
+<section class="menu-section">
+  <div class="menu-grid" id="cart-items">
+    <!-- JS will populate items here -->
+  </div>
+  <h3>Total: RM <span id="total">0.00</span></h3>
+  <button id="clear-cart">Clear Cart</button>
+</section>
+
+<footer>
+  <p>© 2025 Kota Kinabalu Burger. All rights reserved.</p>
+</footer>
+
+<script>
+function renderCart() {
+  const cartContainer = document.getElementById('cart-items');
+  cartContainer.innerHTML = '';
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let total = 0;
+
+  cart.forEach(item => {
+    const itemDiv = document.createElement('div');
+    itemDiv.classList.add('menu-item');
+    itemDiv.innerHTML = `
+      <h3>${item.name}</h3>
+      <p>RM ${item.price.toFixed(2)} x ${item.qty}</p>
+      <span>Subtotal: RM ${(item.price * item.qty).toFixed(2)}</span>
+    `;
+    cartContainer.appendChild(itemDiv);
+    total += item.price * item.qty;
+  });
+
+  document.getElementById('total').textContent = total.toFixed(2);
+}
+
+document.getElementById('clear-cart').addEventListener('click', () => {
+  localStorage.removeItem('cart');
+  renderCart();
+});
+
+renderCart();
+</script>
+
+</body>
+</html>

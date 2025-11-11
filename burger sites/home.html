@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kota Kinabalu Burger</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <img src="logo.png" alt="logo">
+      <span id="brand">Kota Kinabalu Burger</span>
+    </div>
+    <div class="nav-right">
+      <a href="home.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="carts.html">Cart</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <div class="poster-container">
+    <img src="poster.jpg" alt="poster">
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="Crispiest-buttermilk.jpg" alt="">
+      <h3>Crispiest Buttermilk</h3>
+      <p>Juicy chicken dipped in buttermilk and fried to golden perfection.</p>
+      <span>RM 12.90</span>
+      <button>Add To Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="cheesburger big.jpg" alt="">
+      <h3>Cheese Burger Big</h3>
+      <p>Thick beef patty topped with melted cheddar and secret sauce.</p>
+      <span>RM 14.50</span>
+      <button>Add To Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="burger-classic-cheese-rezept.jpg" alt="">
+      <h3>Classic Cheese Burger</h3>
+      <p>Timeless taste — cheese, onion, and our signature KK sauce.</p>
+      <span>RM 11.90</span>
+      <button>Add To Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="burger-classic-cheese-rezept.jpg" alt="">
+      <h3>Double Stack Deluxe</h3>
+      <p>Two layers of juicy patties stacked high with creamy sauce.</p>
+      <span>RM 16.90</span>
+      <button>Add To Cart</button>
+    </div>
+  </div>
+
+  <div id="product-popup" class="popup hidden">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <img src="" alt="popup product" id="popup-img">
+      <h2 id="popup-title"></h2>
+      <p id="popup-desc"></p>
+      <span id="popup-price"></span>
+      <button>Add To Cart</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Kota Kinabalu Burger</title>
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <img src="logo.png" alt="logo">
+      <span id="brand">Kota Kinabalu Burger</span>
+    </div>
+    <div class="nav-right">
+      <a href="home.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="carts.html">Cart</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <header class="menu-header">
+    <h1>Our Menu</h1>
+    <p>Delicious. Juicy. Kota Kinabalu Style.</p>
+  </header>
+
+  <!-- Appetizers -->
+  <section class="menu-section">
+    <h2>Appetizers</h2>
+    <div class="menu-grid">
+      <div class="menu-item" data-name="Cheesy Fries" data-price="7.90">
+        <img src="fries.jpg" alt="Cheesy Fries">
+        <h3>Cheesy Fries</h3>
+        <p>Loaded with melted cheese & KK special sauce.</p>
+        <span>RM 7.90</span>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Chicken Pop Bites" data-price="8.90">
+        <img src="chicken-pop.jpg" alt="Chicken Pop Bites">
+        <h3>Chicken Pop Bites</h3>
+        <p>Mini buttermilk chicken bites, crispy & golden.</p>
+        <span>RM 8.90</span>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Onion Rings" data-price="6.90">
+        <img src="onion-rings.jpg" alt="Onion Rings">
+        <h3>Onion Rings</h3>
+        <p>Lightly battered onion rings with creamy dip.</p>
+        <span>RM 6.90</span>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drinks -->
+  <section class="menu-section">
+    <h2>Drinks</h2>
+    <div class="menu-grid">
+      <div class="menu-item" data-name="Classic Iced Tea" data-price="3.90">
+        <img src="iced-tea.jpg" alt="Classic Iced Tea">
+        <h3>Classic Iced Tea</h3>
+        <p>Refreshing tea, perfect for chilling out.</p>
+        <span>RM 3.90</span>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Chocolate Shake" data-price="5.90">
+        <img src="chocolate-shake.jpg" alt="Chocolate Shake">
+        <h3>Chocolate Shake</h3>
+        <p>Rich, creamy, topped with whipped cream.</p>
+        <span>RM 5.90</span>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Lemonade Cooler" data-price="4.50">
+        <img src="lemonde-cooler.jpg" alt="Lemonade Cooler">
+        <h3>Lemonade Cooler</h3>
+        <p>Fresh lemon juice with mint — sweet & sour.</p>
+        <span>RM 4.50</span>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Products -->
+  <section class="menu-section">
+    <h2>Best Products</h2>
+    <div class="menu-grid">
+      <div class="menu-item highlight" data-name="Signature KK Burger" data-price="15.90">
+        <img src="double-layer.jpg" alt="Signature KK Burger">
+        <h3>Signature KK Burger</h3>
+        <p>Double-layer beef, melted cheese & KK sauce.</p>
+        <span>RM 15.90</span>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item highlight" data-name="Spicy Volcano Burger" data-price="14.90">
+        <img src="volcano-burger.jpg" alt="Spicy Volcano Burger">
+        <h3>Spicy Volcano Burger</h3>
+        <p>Hot chili sauce, crispy chicken & cheddar cheese.</p>
+        <span>RM 14.90</span>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Kota Kinabalu Burger. All rights reserved.</p>
+  </footer>
+
+  <!-- JS for Add to Cart -->
+  <script>
+    const buttons = document.querySelectorAll('.add-cart');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const itemCard = btn.parentElement;
+        const name = itemCard.getAttribute('data-name');
+        const price = parseFloat(itemCard.getAttribute('data-price'));
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const existing = cart.find(i => i.name === name);
+        if(existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({name, price, qty: 1});
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} added to cart!`);
+      });
+    });
+  </script>
+
+</body>
+</html>

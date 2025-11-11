@@ -1,0 +1,141 @@
+/* --- Base Layout --- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5ece1;
+  color: #3b1f0b;
+}
+
+/* --- Navbar --- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(179, 58, 11, 0.9);
+  color: #fff;
+}
+
+nav img {
+  height: 50px;
+}
+
+nav #brand {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav .nav-right a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #fff5e4;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav .nav-right a.active, nav .nav-right a:hover {
+  color: #ffd6a5;
+}
+
+/* --- Header --- */
+.menu-header {
+  text-align: center;
+  padding: 40px 20px 20px 20px;
+}
+
+.menu-header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.menu-header p {
+  margin: 10px 0 0;
+  font-size: 18px;
+}
+
+/* --- Section Titles --- */
+.menu-section {
+  padding: 20px 50px;
+}
+
+.menu-section h2 {
+  margin-bottom: 15px;
+  color: #b33a0b;
+}
+
+/* --- Menu Grid --- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* --- Menu Item Card --- */
+.menu-item {
+  background: #fff3e8;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.menu-item h3 {
+  margin: 8px 0 5px;
+  font-size: 16px;
+}
+
+.menu-item p {
+  font-size: 13px;
+  color: #5c3b27;
+  margin: 0 0 8px;
+}
+
+.menu-item span {
+  font-weight: bold;
+  color: #b33a0b;
+}
+
+.menu-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(179, 58, 11, 0.3);
+}
+
+/* --- Highlight Card --- */
+.menu-item.highlight {
+  background: #f1c9a5;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(179, 58, 11, 0.8);
+  color: #fff5e4;
+  margin-top: 30px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav .nav-right {
+    margin-top: 10px;
+  }
+}
