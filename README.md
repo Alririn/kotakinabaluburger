@@ -20,4 +20,4 @@ A simple web project built for learning **HTML, CSS, and JavaScript**. This proj
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/burger-project.git
+   git clone https://github.com/alririn-project/burger-project.git
